@@ -17,21 +17,22 @@ class ProjetoListView(ListView):
 
 class UsuarioListView(ListView):
     model = Usuario
-    template_name = 'tarefas/usuarios_list.html'  
+    template_name = 'tarefas/usuarios_list.html'
+    context_object_name = 'usuarios' 
 
 class UsuarioCreateView(CreateView):
     model = Usuario
     fields = ['nome', 'email', 'funcao', 'status']
-    template_name = 'usuario_form.html'
+    template_name = 'tarefas/usuario_form.html'
     success_url = reverse_lazy('usuarios_list')
 
 class UsuarioUpdateView(UpdateView):
     model = Usuario
     fields = ['nome', 'email', 'funcao', 'status']
-    template_name = 'usuario_form.html'
+    template_name = 'tarefas/usuario_form.html'
     success_url = reverse_lazy('usuarios_list')
 
 class UsuarioDeleteView(DeleteView):
     model = Usuario
-    template_name = 'usuario_confirm_delete.html'
+    template_name = 'tarefas/usuario_confirm_delete.html'
     success_url = reverse_lazy('usuarios_list')

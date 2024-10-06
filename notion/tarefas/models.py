@@ -32,8 +32,8 @@ class Comentario(models.Model):
 
 class Usuario(models.Model):
     nome = models.CharField(max_length=100)
-    email = models.EmailField()
-    funcao = models.CharField(max_length=50)
+    email = models.EmailField(unique=True)
+    funcao = models.CharField(max_length=50, choices=[('Admin', 'Admin'), ('Colaborador', 'Colaborador')])
     status = models.CharField(max_length=20, choices=[('Ativo', 'Ativo'), ('Inativo', 'Inativo')])
 
     def __str__(self):

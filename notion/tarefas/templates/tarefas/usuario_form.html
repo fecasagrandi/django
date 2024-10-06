@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Adicionar/Editar Usuário{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ view.object.pk|yesno:"Editar Usuário,Adicionar Usuário" }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <a href="{% url 'usuarios_list' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}
