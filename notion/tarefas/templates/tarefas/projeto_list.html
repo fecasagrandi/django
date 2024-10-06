@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Projetos</h1>
+    <a href="{% url 'projeto_create' %}" class="btn btn-primary">Criar Novo Projeto</a>
+    <ul>
+        {% for projeto in object_list %}
+            <li>{{ projeto.nome }} - {{ projeto.descricao }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,3 +1,5 @@
+# Felipe Moreira Casagrandi - https://github.com/fecasagrandi/django.git
+
 *.pyc
 __pycache__/
 db.sqlite3
